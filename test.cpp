@@ -89,13 +89,37 @@ void playerAmove(vector<vector<string>> &board){
         board[x][y+1] = "0";
         board [x][y] = "0";
     }
+    else if (move == "FL" && x!=1 && y!=0 ){  //L3
+        board[x-2][y-1] = bot;
+        board[x][y] = "0";
+    }
     else if (move == "FR" && x!=1 && y!=4 ){     // L3
         board[x-2][y+1] = bot;
         board[x][y] = "0";
     }
+    else if (move == "BL" && x!=3  && y!=0){    //L3
+        board[x+2][y-1] = bot;
+        board[x][y]  = "0";
+    }
+    else if (move == "BR"&& x!=3 && y!=4){  //L3
+        board[x+2][y+1] = bot;
+        board[x][y]  = "0";
+    }
     else if (move == "RF" && y!=3 && x!=1 ){     // L3
         board[x-1][y+2] = bot;
         board[x][y] = "0";
+    }
+    else if (move == "RB" && y!=3 && x!=4 ){       //L3
+        board[x+1][y+2] = bot;
+        board[x][y]  = "0";
+    }
+    else if (move == "LF" && y!=1 && x!=0){        //L3
+        board[x-1][y-2] = bot;
+        board[x][y]  = "0";
+    }
+    else if (move == "LB" && y!=1 && x!=4){     //L3
+        board[x+1][y-2] = bot;
+        board[x][y]  = "0";
     }
     else{
         cout<<"Invalid Move!!!"<<endl;
@@ -160,12 +184,36 @@ void playerBmove(vector<vector<string>> &board){
         board[x][y+1] = "0";
         board [x][y] = "0";
     }
+    else if(move == "FL" && x!=3 && y!=0 ){     //L3
+        board[x+2][y-1] = bot;
+        board[x][y] = "0";
+    }
     else if (move == "FR" && x!=3 && y!=4){   // L3
         board[x+2][y+1] = bot;
         board[x][y] = "0";
     }
+    else if(move == "BL" && x!=1  && y!=0){      //L3
+        board[x-2][y-1] = bot;
+        board[x][y] = "0";
+    }
+    else if(move == "BR" && x!=1 && y!=4){      //L3
+        board[x-2][y+1] = bot;
+        board[x][y] = "0";
+    }
     else if (move == "RF" && y!=3 && x!=4){  // L3
         board[x+1][y+2] = bot;
+        board[x][y] = "0";
+    }
+    else if(move == "RB" && y!=1 && x!=0){      //L3
+        board[x-1][y+2] = bot;
+        board[x][y] = "0";
+    }
+    else if(move == "LF" && y!=1 && x!=4 ){      //L3
+        board[x+1][y-2] = bot;
+        board[x][y] = "0";
+    }
+    else if(move == "LB" && y!=1 && x!=0){      //L3
+        board[x-1][y-2] = bot;
         board[x][y] = "0";
     }
     else{
