@@ -34,7 +34,7 @@ void inputB(vector<vector<string>> &board){
 
 void playerAmove(vector<vector<string>> &board){
     string bot;
-    char move;
+    string move;
     cout<<"Which A bot to move: ";
     cin>>bot;
     cout<<"Which direction: ";
@@ -53,20 +53,40 @@ void playerAmove(vector<vector<string>> &board){
     if(x==-1 && y==-1)
         return;
 
-    if (move == 'F' && x!=0){  
+    if (move == "F" && x!=0){  
         board[x-1][y] = bot;    
         board [x][y] = "0";
-    }   
-    else if (move == 'B' && x!=4){  
+    }
+    else if (move == "HF" && x!=1){  
+        board[x-2][y] = bot; 
+        board[x-1][y] = "0";   
+        board [x][y] = "0";
+    }
+    else if (move == "B" && x!=4){  
         board[x+1][y] = bot;
         board [x][y] = "0";
     }
-    else if (move == 'L' && y!=0){ 
+    else if (move == "HB" && x!=3){  
+        board[x+2][y] = bot;
+        board[x+1][y] = "0";
+        board [x][y] = "0";
+    }
+    else if (move == "L" && y!=0){ 
         board[x][y-1] = bot;
         board [x][y] = "0";
     }
-    else if (move == 'R' && y!=4){   
+    else if (move == "HL" && y!=1){ 
+        board[x][y-2] = bot;
+        board[x][y-1] = "0";
+        board [x][y] = "0";
+    }
+    else if (move == "R" && y!=4){   
         board[x][y+1] = bot;
+        board [x][y] = "0";
+    }
+    else if (move == "HR" && y!=3){   
+        board[x][y+2] = bot;
+        board[x][y+1] = "0";
         board [x][y] = "0";
     }
     else{
@@ -77,7 +97,7 @@ void playerAmove(vector<vector<string>> &board){
 
 void playerBmove(vector<vector<string>> &board){
     string bot;
-    char move;
+    string move;
     cout<<"Which B bot to move: ";
     cin>>bot;
     cout<<"Which direction: ";
@@ -96,20 +116,40 @@ void playerBmove(vector<vector<string>> &board){
     if(x==-1 && y==-1)
         return;
 
-    if (move == 'F' && x!=4){  
+    if (move == "F" && x!=4){  
         board[x+1][y] = bot;
         board [x][y] = "0";
     }
-    else if (move == 'B' && x!=0){  
+    else if (move == "HF" && x!=3 ){
+        board[x+2][y] = bot;
+        board[x+1][y] = "0";
+        board [x][y] = "0";
+    }
+    else if (move == "B" && x!=0){  
         board[x-1][y] = bot;
         board [x][y] = "0";
     }
-    else if (move == 'L' && y!=0){ 
+    else if (move == "HB" && x!=1 ){
+        board[x-2][y] = bot;
+        board[x-1][y] = "0";
+        board [x][y] = "0";
+    }
+    else if (move == "L" && y!=0){ 
         board[x][y-1] = bot;
         board [x][y] = "0";
     }
-    else if (move == 'R' && y!=4){   
+    else if (move == "HL" && y!=1){
+        board[x][y-2] = bot;
+        board[x][y-1] = "0";
+        board [x][y] = "0";
+    }
+    else if (move == "R" && y!=4){   
         board[x][y+1] = bot;
+        board [x][y] = "0";
+    }
+    else if (move == "HR" && y!=3 ){
+        board[x][y+2] = bot;
+        board[x][y+1] = "0";
         board [x][y] = "0";
     }
     else{
