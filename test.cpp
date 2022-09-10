@@ -53,41 +53,49 @@ void playerAmove(vector<vector<string>> &board){
     if(x==-1 && y==-1)
         return;
 
-    if (move == "F" && x!=0){  
+    if (move == "F" && x!=0){     // L1
         board[x-1][y] = bot;    
         board [x][y] = "0";
     }
-    else if (move == "HF" && x!=1){  
+    else if (move == "HF" && x!=1){  // L2 
         board[x-2][y] = bot; 
         board[x-1][y] = "0";   
         board [x][y] = "0";
     }
-    else if (move == "B" && x!=4){  
+    else if (move == "B" && x!=4){   // L1
         board[x+1][y] = bot;
         board [x][y] = "0";
     }
-    else if (move == "HB" && x!=3){  
+    else if (move == "HB" && x!=3){   // L2
         board[x+2][y] = bot;
         board[x+1][y] = "0";
         board [x][y] = "0";
     }
-    else if (move == "L" && y!=0){ 
+    else if (move == "L" && y!=0){   // L1
         board[x][y-1] = bot;
         board [x][y] = "0";
     }
-    else if (move == "HL" && y!=1){ 
+    else if (move == "HL" && y!=1){   // L2
         board[x][y-2] = bot;
         board[x][y-1] = "0";
         board [x][y] = "0";
     }
-    else if (move == "R" && y!=4){   
+    else if (move == "R" && y!=4){     // L1
         board[x][y+1] = bot;
         board [x][y] = "0";
     }
-    else if (move == "HR" && y!=3){   
+    else if (move == "HR" && y!=3){    // L2
         board[x][y+2] = bot;
         board[x][y+1] = "0";
         board [x][y] = "0";
+    }
+    else if (move == "FR" && x!=1 && y!=4 ){     // L3
+        board[x-2][y+1] = bot;
+        board[x][y] = "0";
+    }
+    else if (move == "RF" && y!=3 && x!=1 ){     // L3
+        board[x-1][y+2] = bot;
+        board[x][y] = "0";
     }
     else{
         cout<<"Invalid Move!!!"<<endl;
@@ -116,41 +124,49 @@ void playerBmove(vector<vector<string>> &board){
     if(x==-1 && y==-1)
         return;
 
-    if (move == "F" && x!=4){  
+    if (move == "F" && x!=4){    // L1
         board[x+1][y] = bot;
         board [x][y] = "0";
     }
-    else if (move == "HF" && x!=3 ){
+    else if (move == "HF" && x!=3 ){   // L2
         board[x+2][y] = bot;
         board[x+1][y] = "0";
         board [x][y] = "0";
     }
-    else if (move == "B" && x!=0){  
+    else if (move == "B" && x!=0){    // L1
         board[x-1][y] = bot;
         board [x][y] = "0";
     }
-    else if (move == "HB" && x!=1 ){
+    else if (move == "HB" && x!=1 ){   // L2
         board[x-2][y] = bot;
         board[x-1][y] = "0";
         board [x][y] = "0";
     }
-    else if (move == "L" && y!=0){ 
+    else if (move == "L" && y!=0){    // L1
         board[x][y-1] = bot;
         board [x][y] = "0";
     }
-    else if (move == "HL" && y!=1){
+    else if (move == "HL" && y!=1){   // L2
         board[x][y-2] = bot;
         board[x][y-1] = "0";
         board [x][y] = "0";
     }
-    else if (move == "R" && y!=4){   
+    else if (move == "R" && y!=4){     // L1
         board[x][y+1] = bot;
         board [x][y] = "0";
     }
-    else if (move == "HR" && y!=3 ){
+    else if (move == "HR" && y!=3 ){  // L2
         board[x][y+2] = bot;
         board[x][y+1] = "0";
         board [x][y] = "0";
+    }
+    else if (move == "FR" && x!=3 && y!=4){   // L3
+        board[x+2][y+1] = bot;
+        board[x][y] = "0";
+    }
+    else if (move == "RF" && y!=3 && x!=4){  // L3
+        board[x+1][y+2] = bot;
+        board[x][y] = "0";
     }
     else{
         cout<<"Invalid Move!!!"<<endl;
