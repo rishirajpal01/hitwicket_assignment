@@ -16,4 +16,7 @@ I have followed a different approach.
 9. The character is updated and the updated board is displayed.
 10. This loop goes on infinitely.
 
+To keep it simple, right-left direction are measured from one perspective only, i.e. both Player A and Player B have same left and right. 
+But the forward and back are of respective player's side.
+
 The game is still in development :) 
